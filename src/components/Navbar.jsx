@@ -22,8 +22,6 @@ export default function Navbar() {
           <li><a href="#" className="hover:text-primary">Home</a></li>
           <li><a href="#" className="hover:text-primary">Services</a></li>
           <li><a href="#" className="hover:text-primary">Staff</a></li>
-          <li><a href="#" className="hover:text-primary">About</a></li>
-          <li><a href="#" className="hover:text-primary">Contact</a></li>
         </ul>
 
         {/* Mobile Menu Button */}
@@ -57,8 +55,6 @@ export default function Navbar() {
             <li><a href="#" className="hover:text-primary">Home</a></li>
             <li><a href="#" className="hover:text-primary">Services</a></li>
             <li><a href="#" className="hover:text-primary">Staff</a></li>
-            <li><a href="#" className="hover:text-primary">About</a></li>
-            <li><a href="#" className="hover:text-primary">Contact</a></li>
           </ul>
         </div>
       )}

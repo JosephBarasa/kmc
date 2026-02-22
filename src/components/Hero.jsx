@@ -1,3 +1,5 @@
+import heroImage from '../assets/kmc img1.jpg';
+
 export default function Hero() {
   return (
     <section className="bg-white">
@@ -37,7 +39,7 @@ export default function Hero() {
           <div className="relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-100">
             {/* Replace src with your image */}
             <img
-              src="/hospital-hero.jpg"
+              src={heroImage}
               alt="Hospital building and staff"
               className="h-full w-full object-cover"
             />
