@@ -3,101 +3,102 @@ import bgImg1 from "../assets/bgImg1.jpg";
 export default function Services() {
   const services = [
     {
-      title: "Outpatient Care",
-      description: "Fast, reliable diagnosis and treatment without admission.",
+      title: "Outpatient Clinics",
+      description: "General consultation, specialist reviews, and follow‑up care without admission.",
+      icon: "🩺",
     },
     {
-      title: "Inpatient Services",
-      description: "24/7 monitored care with experienced medical staff.",
+      title: "Inpatient & Wards",
+      description: "Comfortable, closely monitored wards for patients who require admission.",
+      icon: "🏥",
     },
     {
-      title: "Laboratory",
-      description: "Accurate diagnostics using modern lab technology.",
+      title: "Maternity & Childbirth",
+      description: "Antenatal, delivery, and postnatal care in a safe, family‑friendly environment.",
+      icon: "🤱",
+    },
+    {
+      title: "Laboratory & Diagnostics",
+      description: "Accurate tests and timely results using trusted diagnostic equipment.",
+      icon: "🔬",
     },
     {
       title: "Pharmacy",
-      description: "Well-stocked pharmacy with professional guidance.",
+      description: "Fully stocked pharmacy with genuine medication and professional guidance.",
+      icon: "💊",
     },
     {
-      title: "Maternity",
-      description: "Safe delivery, antenatal and postnatal care.",
-    },
-    {
-      title: "Emergency",
-      description: "Immediate response for critical medical situations.",
+      title: "Emergency & Ambulance",
+      description: "Rapid response to medical emergencies with trained staff on standby.",
+      icon: "🚑",
     },
   ];
 
   return (
     <section
+      id="services"
       className="relative py-20 bg-cover bg-center"
       style={{ backgroundImage: `url(${bgImg1})` }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-white/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-white/85 backdrop-blur-sm" />
 
       <div className="relative mx-auto max-w-7xl px-4">
 
         {/* Section Header */}
-        <div className="mb-12 max-w-2xl">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-3">
-            Our Medical Services
-          </h2>
-          <p className="text-gray-700">
-            Comprehensive healthcare services designed around patient safety,
-            efficiency, and compassion.
-          </p>
-        </div>
-
-        {/* Services Carousel */}
-        <div className="relative">
-          <div className="flex gap-6 overflow-x-auto scroll-smooth pb-4 snap-x snap-mandatory">
-
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="
-                  snap-start
-                  min-w-[280px]
-                  bg-white
-                  border border-gray-200
-                  rounded-xl
-                  p-6
-                  transition
-                  duration-300
-                  hover:-translate-y-2
-                  hover:shadow-xl
-                  hover:border-primary/40
-                "
-              >
-                {/* Icon Placeholder */}
-                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary font-bold">
-                  +
-                </div>
-
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {service.title}
-                </h3>
-
-                <p className="text-sm text-gray-600">
-                  {service.description}
-                </p>
-
-                <div className="mt-4">
-                  <a
-                    href="#"
-                    className="text-sm font-medium text-primary hover:underline"
-                  >
-                    Learn more →
-                  </a>
-                </div>
-              </div>
-            ))}
-
+        <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              Our Services
+            </p>
+            <h2 className="mt-2 text-3xl md:text-4xl font-semibold text-slate-900">
+              Comprehensive Care Under One Roof
+            </h2>
+            <p className="mt-3 text-sm md:text-base text-slate-600">
+              From routine check‑ups to emergency care, we provide a full range
+              of medical services designed around safety, dignity, and compassion.
+            </p>
           </div>
 
-          {/* Scroll Hint */}
-          <div className="pointer-events-none absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-white/80 to-transparent" />
+          <div className="mt-4 rounded-2xl bg-white/80 px-4 py-3 text-xs md:text-sm text-slate-700 shadow-sm ring-1 ring-slate-100">
+            <p>
+              Need clarification about a service?{" "}
+              <span className="font-semibold text-primary">
+                Call +254 790 463 858
+              </span>
+            </p>
+          </div>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => (
+            <article
+              key={service.title}
+              className="group flex flex-col rounded-2xl bg-white/90 p-6 shadow-sm ring-1 ring-slate-100 transition hover:-translate-y-1.5 hover:bg-white hover:shadow-lg hover:ring-primary/30"
+            >
+              <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary-light text-lg">
+                <span className="text-base">{service.icon}</span>
+              </div>
+
+              <h3 className="text-base md:text-lg font-semibold text-slate-900">
+                {service.title}
+              </h3>
+
+              <p className="mt-2 text-sm text-slate-600 flex-1">
+                {service.description}
+              </p>
+
+              <div className="mt-4 flex items-center text-xs font-semibold text-primary">
+                <span className="transition group-hover:translate-x-0.5">
+                  Learn more
+                </span>
+                <span className="ml-1 transition group-hover:translate-x-0.5">
+                  →
+                </span>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

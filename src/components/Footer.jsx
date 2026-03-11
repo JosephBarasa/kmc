@@ -1,80 +1,107 @@
-import footerBg from "../assets/footerBg.jpg";
-
 export default function Footer() {
   return (
     <footer
-      className="relative border-t border-blue-200"
-      style={{
-        backgroundImage: `url(${footerBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className="relative border-t border-blue-100 bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700"
     >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-blue-100/90 backdrop-blur-sm" />
-
-      <div className="relative mx-auto max-w-7xl px-4 py-16">
+      <div className="mx-auto max-w-7xl px-4 py-10 md:py-12">
         {/* Main Footer Content */}
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-8 md:grid-cols-4 items-start">
           {/* Hospital Info */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="h-9 w-9 rounded-md bg-primary flex items-center justify-center text-white font-bold">
-                H
+          <div className="md:col-span-2">
+            <div className="mb-3 flex items-center gap-3">
+              <div className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-white font-bold shadow-sm">
+                K
               </div>
-              <span className="text-lg font-semibold text-gray-900">
+              <span className="text-lg font-semibold text-white">
                 Kimwanga Medical Centre
               </span>
             </div>
-            <p className="text-sm text-gray-700">
-              Providing compassionate, reliable, and modern healthcare services
-              to our community.
+            <p className="text-xs md:text-sm text-blue-100/90">
+              A community‑based medical facility dedicated to delivering safe,
+              accessible, and affordable healthcare for families in and around
+              Bungoma.
             </p>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4">
-              Quick Links
-            </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li><a href="#" className="hover:text-primary">Home</a></li>
-              <li><a href="#" className="hover:text-primary">Services</a></li>
-              <li><a href="#" className="hover:text-primary">Our Staff</a></li>
-              <li><a href="#" className="hover:text-primary">About Us</a></li>
-            </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4">
+            <h4 className="mb-3 text-sm font-semibold text-white">
               Contact
             </h4>
-            <ul className="space-y-2 text-sm text-gray-700">
+            <ul className="space-y-1.5 text-xs md:text-sm text-blue-100">
               <li>📍 Bungoma, Kenya</li>
-              <li>📞 +254 790463858</li>
-              <li>✉️ kimwangamedicalcenter1@gmail.com</li>
+              <li>📞 <a href="tel:+254790463858" className="hover:underline">+254 790 463 858</a></li>
+              <li>✉️ <a href="mailto:kimwangamedicalcenter1@gmail.com" className="hover:underline">kimwangamedicalcenter1@gmail.com</a></li>
+              <li>🕒 24/7 Emergency Services</li>
             </ul>
           </div>
 
-          {/* Social Media */}
+          {/* Quick Links / Social */}
           <div>
-            <h4 className="text-sm font-semibold text-gray-900 mb-4">
-              Follow Us
+            <h4 className="mb-3 text-sm font-semibold text-white">
+              Quick Links
             </h4>
-            <div className="flex items-center gap-4">
-              {/* Social icons go here */}
+            <ul className="space-y-1.5 text-xs md:text-sm text-blue-100">
+              <li>
+                <button
+                  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                  className="hover:underline"
+                >
+                  Home
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("services")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="hover:underline"
+                >
+                  Services
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() =>
+                    document
+                      .getElementById("staff")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  className="hover:underline"
+                >
+                  Our Team
+                </button>
+              </li>
+            </ul>
+
+            <div className="mt-4">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-blue-200">
+                Follow Us
+              </p>
+              <div className="flex items-center gap-2 text-blue-100">
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">
+                  fb
+                </span>
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-[10px]">
+                  ig
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 border-t border-blue-200 pt-6 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-600">
+        <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-blue-800/60 pt-4 text-[11px] md:flex-row md:text-xs lg:text-sm text-blue-100">
           <p>
             © {new Date().getFullYear()} Kimwanga Medical Center. All rights reserved.
           </p>
-          <p className="mt-2 sm:mt-0">
-            Developed by <span className="text-primary font-medium">Joseph Barasa</span>
+          <p className="mt-1 md:mt-0">
+            Developed by{" "}
+            <span className="font-medium text-white">
+              Joseph Barasa
+            </span>
           </p>
         </div>
       </div>
